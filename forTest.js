@@ -20,6 +20,7 @@ right.onclick = function(){
 
 down.onclick = function(){
     game.movePieceDown()
+    game.getState()
 }
 
 show.onclick = function(){

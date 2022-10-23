@@ -2,28 +2,7 @@ export default class Game {
     score = 0;
     lines = 0;
     level = 0;
-    playfied = [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]
-    ];
+    playfied = this.createPlayfield();
     activePiece = {
         x: 0,
         y: 0,
@@ -38,6 +17,28 @@ export default class Game {
             [0, 0, 0]
         ]
     };
+
+    // getState(){
+    //     const playfied = this.createPlayfield()        
+    //     console.log(playfied)
+    //     return{
+    //         playfied :
+    //     }
+    // };
+
+    createPlayfield(){
+        const playfied = []
+
+        for(let i = 0; i < 20; i++){
+            playfied[i] = []
+
+            for(let x = 0; x < 10; x++){
+                playfied[i][x] = 0
+            }
+        }
+
+        return playfied
+    }
 
     movePieceLeft() {
         this.activePiece.x -= 1
