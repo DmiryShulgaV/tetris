@@ -37,7 +37,6 @@ export default class Game {
             [1, 1, 1],
             [0, 0, 0]
         ]
-
     };
 
     movePieceLeft() {
@@ -55,8 +54,6 @@ export default class Game {
         if (this.hasCollision()) {
             this.activePiece.x -= 1;
         }
-
-
     };
 
     movePieceDown() {
@@ -83,7 +80,6 @@ export default class Game {
                 temp[y][i] = blocks[length - 1 - i][y]
             }
         }
-
         this.activePiece.blocks = temp
 
         if(this.hasCollision()){
@@ -106,7 +102,6 @@ export default class Game {
                 }
             }
         }
-
         return false
     };
 
